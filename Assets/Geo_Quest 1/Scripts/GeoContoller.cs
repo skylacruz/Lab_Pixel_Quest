@@ -8,18 +8,39 @@ public class GeoContoller : MonoBehaviour {
 
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
+    SpriteRenderer playerrenderer;
     void Start() {
         rb2d = GetComponent<Rigidbody2D>(); 
+        playerrenderer = GetComponent<SpriteRenderer>();
         //Debug.Log(Var2 + "World");
         //Var2 = "Goodbye";
         //Debug.Log(Var2 + "World");
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         float xInput = Input.GetAxis("Horizontal");
         xInput *= variable1;
         rb2d.velocity = new Vector2(xInput, rb2d.velocity.y);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            playerrenderer.color = Color.blue;
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            playerrenderer.color = Color.red;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            playerrenderer.color = Color.yellow;
+
+
+        }
     }
 
     public string nextLevel = "Level2";
