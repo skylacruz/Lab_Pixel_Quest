@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4423ffd2344957b4bb1a9b6833126359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 100
+  score: -50
   preFab: {fileID: 5518505331994970658, guid: cb35a3782247e20428e4951ac26408d3, type: 3}
 --- !u!82 &84090744047804007
 AudioSource:
