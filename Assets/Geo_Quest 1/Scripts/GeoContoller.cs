@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GeoContoller : MonoBehaviour {
     public int variable1 = 2;
-
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
     SpriteRenderer playerrenderer;
     void Start() {
-        rb2d = GetComponent<Rigidbody2D>(); 
+        rb2d = GetComponent<Rigidbody2D>();
         playerrenderer = GetComponent<SpriteRenderer>();
-        //Debug.Log(Var2 + "World");
-        //Var2 = "Goodbye";
-        //Debug.Log(Var2 + "World");
-    }
+
+        playerrenderer =GetComponentInChildren<SpriteRenderer>();
+}
 
     // Update is called once per frame
     void Update()
@@ -41,9 +40,14 @@ public class GeoContoller : MonoBehaviour {
 
 
         }
+
+        if (xInput > 0){ playerrenderer.flipX = true;}
+        else if (xInput < 0) { playerrenderer.flipX = false;}
     }
 
     public string nextLevel = "Level2";
+    private object _SpriteRenderer;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hit");
